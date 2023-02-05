@@ -14,7 +14,7 @@ set positional-arguments
 gitp:
   git add .
   git commit -m "build"
-  git push origin main
+  git push origin master
 
 deploy:
   just gitp
