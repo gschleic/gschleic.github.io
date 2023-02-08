@@ -1,11 +1,11 @@
 
 # must match name of the github repo
-name:= "share-video-behind-a-pin" 
-
+github_repo:= "gschleic.github.io" 
 
 alias g:=gitp
 alias b:=build
 alias d:=deploy
+alias o:=open 
 
 set dotenv-load
 set positional-arguments
@@ -18,12 +18,15 @@ gitp:
 
 deploy:
   just gitp
-  echo "https://engage-blueprint.github.io/{{name}}"
+  echo "https://{{github_repo}}"
 
 build:
   just bundleflu
   xparse -v -o ./docs/app.bin ./src/bundled.fluent
   just gen-index-html
+
+open:
+  open "https://{{github_repo}}"
 
 bundleflu:
   #!/usr/bin/env zx
