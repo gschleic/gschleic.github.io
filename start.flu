@@ -1,4 +1,7 @@
 [start]
 
-.t "Glenns home page"
+.bg #blue9 #indigo7 -radial
+
+.avatar +face-44 -circle
+
 
